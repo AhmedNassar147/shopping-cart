@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-dark">
+  <a class="navbar-brand" href="/">Logo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/shopping-cart/">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart 
+          <span class="badge">{{session.cart.totalQty}}</span>
+          <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user" aria-hidden="true"></i>User Management
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {{#if login}}
+            <a class="dropdown-item" href="/user/profile">User Account</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/user/logout">logout</a>
+            {{else}}
+              <a class="dropdown-item" href="/user/signup">Sign Up</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/user/signin">Sign In</a>
+          {{/if}}
+          
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+{{!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle-collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">toggle navigation</span>
+        <span class="icon--bar"></span>
+        <span class="icon--bar"></span>
+        <span class="icon--bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class=""><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>ShoopingCart</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdwon" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user" aria-hidden="true"></i>User Management <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+             {{#if login}}
+              <li><a href="/user/profile">UserAcount</a></li>            
+              <li role="separator" class="divider"></li>
+              <li><a href="/user/logout">Logout</a></li>
+            {{else}}
+              <li><a href="/user/signup">Sign Up</a></li>            
+              <li role="separator" class="divider"></li>
+              <li><a href="/user/signin">Sign In</a></li>
+          {{/if}}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> --}}
